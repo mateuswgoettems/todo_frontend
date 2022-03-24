@@ -6,7 +6,7 @@ import App from './App.vue';
 require('dotenv').config();
 
 const http = axios.create({
-  baseURL: `${process.env.BACKEND_URL}/todos`,
+  baseURL: 'http://backend/todos',
 });
 
 Vue.prototype.$http = http;
