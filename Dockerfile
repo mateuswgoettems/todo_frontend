@@ -7,7 +7,9 @@ COPY package.json .
 
 RUN npm install
 
-COPY .env.prod .env
+ARG BACKEND_URL
+
+ENV BACKEND_URL=$BACKEND_URL
 
 COPY . .
 
