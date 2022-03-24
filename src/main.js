@@ -3,6 +3,8 @@ import BootstrapVue from 'bootstrap-vue';
 import axios from 'axios';
 import App from './App.vue';
 
+require('dotenv').config();
+
 const http = axios.create({
   baseURL: process.env.BACKEND_URL
     ? process.env.BACKEND_URL

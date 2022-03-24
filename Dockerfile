@@ -7,6 +7,8 @@ COPY package.json .
 
 RUN npm install
 
+COPY .env.prod .env
+
 COPY . .
 
 # start app
