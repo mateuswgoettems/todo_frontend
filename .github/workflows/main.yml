@@ -21,6 +21,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: Set DB Variables
+        run: |
+          touch .env.prod
+          echo BACKEND_URL="${{ secrets.BACKEND_URL }}" >> .env.prod
+
       - name: setup node
         uses: actions/setup-node@master
         with:
