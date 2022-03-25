@@ -9,6 +9,8 @@ const http = axios.create({
   baseURL: `${process.env.BACKEND_URL}/todos`,
 });
 
+console.log(http);
+
 Vue.prototype.$http = http;
 
 Vue.use(BootstrapVue);
