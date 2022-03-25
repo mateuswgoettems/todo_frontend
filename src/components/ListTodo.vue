@@ -75,15 +75,17 @@ export default {
   },
   methods: {
     fetchTodo() {
-      this.$http.get('/todo').then((response) => {
+      const url = `${process.env.BACKEND_URL}`;
+      this.$http.get(url + '/todo').then((response) => {
         this.todos = response.data;
       });
     },
 
     updateTodo(todo) {
       let id = todo._id;
+      const url = `${process.env.BACKEND_URL}`;
       this.$http
-        .put(`/todo/${id}`, todo)
+        .put(`${url}/todo/${id}`, todo)
         .then((response) => {
           console.log(response);
         })
@@ -93,7 +95,8 @@ export default {
     },
 
     deleteTodo(id) {
-      this.$http.delete(`/todo/${id}`).then((response) => {
+      const url = `${process.env.BACKEND_URL}`;
+      this.$http.delete(`${url}/todo/${id}`).then((response) => {
         this.fetchTodo();
       });
     },
