@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     fetchTodo() {
-      this.$http.get('/').then((response) => {
+      this.$http.get('/todo').then((response) => {
         this.todos = response.data;
       });
     },
@@ -83,7 +83,7 @@ export default {
     updateTodo(todo) {
       let id = todo._id;
       this.$http
-        .put(`/${id}`, todo)
+        .put(`/todo/${id}`, todo)
         .then((response) => {
           console.log(response);
         })
@@ -93,7 +93,7 @@ export default {
     },
 
     deleteTodo(id) {
-      this.$http.delete(`/${id}`).then((response) => {
+      this.$http.delete(`/todo/${id}`).then((response) => {
         this.fetchTodo();
       });
     },
