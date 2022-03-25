@@ -51,8 +51,9 @@
 </template>
 
 <script>
-import axios from 'axios';
 import bus from './../bus.js';
+
+const backendURL = `${process.env.BACKEND_URL}/todos`;
 
 export default {
   data() {
@@ -76,6 +77,7 @@ export default {
   },
   methods: {
     fetchTodo() {
+      console.log(backendURL);
       this.$http.get('/').then((response) => {
         this.todos = response.data;
       });
