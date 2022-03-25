@@ -5,11 +5,11 @@ import App from './App.vue';
 
 const axios = require('axios');
 
+console.log(process.env.BACKEND_URL);
+
 const http = axios.create({
   baseURL: `${process.env.BACKEND_URL}/todos`,
 });
-
-console.log(http);
 
 Vue.prototype.$http = http;
 
