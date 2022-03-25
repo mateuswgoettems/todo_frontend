@@ -14,4 +14,4 @@ ENV BACKEND_URL=$BACKEND_URL
 COPY . .
 
 # start app
-CMD ["npm", "run", "serve"]
+CMD ["BACKEND_URL=${BACKEND_URL}", "npm", "run", "serve"]
